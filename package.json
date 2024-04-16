@@ -27,6 +27,12 @@
     "prettier": "^3.2.5"
   },
   "devDependencies": {
-    "svag-lint": "^0.0.18"
+    "svag-lint": "~0.0.18"
+  },
+  "libalibe": {
+    "depsVersionAccuracyNotMatter": [
+      "svag-lint",
+      "svag-ts"
+    ]
   }
 }
