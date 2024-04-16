@@ -1,6 +1,6 @@
 {
   "name": "svag-prettier",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "homepage": "https://github.com/svagcrew/svag-prettier",
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "prettier": "^3.2.5"
   },
   "devDependencies": {
-    "svag-lint": "~0.0.26"
+    "svag-lint": "^0.1.1"
   },
   "libalibe": {
     "depsVersionAccuracyNotMatter": [

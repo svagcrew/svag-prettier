@@ -11,8 +11,8 @@ dependencies:
 
 devDependencies:
   svag-lint:
-    specifier: ~0.0.26
-    version: 0.0.26(@types/node@20.12.7)(prettier@3.2.5)
+    specifier: ^0.1.1
+    version: 0.1.1(@types/node@20.12.7)(prettier@3.2.5)
 
 packages:
 
@@ -1203,8 +1203,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svag-cli-utils@0.0.5(@types/node@20.12.7):
-    resolution: {integrity: sha512-XhFvzwsIA2x64aKixL2tAYCbve7TLFupzkwehPgxEvGyUQ1iAwRLfAxkRyl84rQ9IrYHxCTDAf1E5mRpKoqN0A==}
+  /svag-cli-utils@0.0.13(@types/node@20.12.7):
+    resolution: {integrity: sha512-s9GWQRSgpHD/XjMmAUm9cIcg3b63lkzQv4E/MJltn4GEnd51f2o8rze3reJyF86FtwSHdbuUJe+DEJk8qbp/zw==}
     dependencies:
       dedent: 1.5.3
       enquirer: 2.4.1
@@ -1225,8 +1225,8 @@ packages:
       - babel-plugin-macros
     dev: true
 
-  /svag-lint@0.0.26(@types/node@20.12.7)(prettier@3.2.5):
-    resolution: {integrity: sha512-eqLReKQSpLvodo/d68363A1hQskEV/lIin9FnGNX4p8EM5Ox2kxjjPOJ5uuyOFIi0kBJDCAIZC4942MceFRG7Q==}
+  /svag-lint@0.1.1(@types/node@20.12.7)(prettier@3.2.5):
+    resolution: {integrity: sha512-qu0J4L36sSA1pMyfMOiyZBR4TkiScyiLncZafXwInj9/muG9V71UUJmfSoBI1i7k9Ypc08QPwg+gfJPSDSy39A==}
     hasBin: true
     dependencies:
       '@eslint/js': 9.0.0
@@ -1236,7 +1236,7 @@ packages:
       eslint-plugin-node: 11.1.0(eslint@9.0.0)
       eslint-plugin-prettier: 5.1.3(eslint-config-prettier@9.1.0)(eslint@9.0.0)(prettier@3.2.5)
       lodash: 4.17.21
-      svag-cli-utils: 0.0.5(@types/node@20.12.7)
+      svag-cli-utils: 0.0.13(@types/node@20.12.7)
       typescript: 5.4.5
       typescript-eslint: 7.7.0(eslint@9.0.0)(typescript@5.4.5)
       zod: 3.22.4
