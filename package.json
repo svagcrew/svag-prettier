@@ -1,0 +1,32 @@
+{
+  "name": "svag-prettier",
+  "version": "0.0.1",
+  "homepage": "https://github.com/svagcrew/svag-prettier",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svagcrew/svag-prettier.git"
+  },
+  "bugs": {
+    "url": "https://github.com/svagcrew/svag-prettier/issues"
+  },
+  "author": {
+    "name": "Sergei Dmitriev",
+    "url": "https://sergei.svag.group"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "configs/**/*"
+  ],
+  "scripts": {
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "prettier": "^3.2.5"
+  },
+  "devDependencies": {
+    "svag-lint": "^0.0.17"
+  }
+}
