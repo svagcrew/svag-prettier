@@ -21,13 +21,13 @@
     "configs/**/*"
   ],
   "scripts": {
-    "lint": "eslint"
+    "lint": "svag-lint lint"
   },
   "dependencies": {
     "prettier": "^3.2.5"
   },
   "devDependencies": {
-    "svag-lint": "~0.0.18"
+    "svag-lint": "~0.0.26"
   },
   "libalibe": {
     "depsVersionAccuracyNotMatter": [
