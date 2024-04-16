@@ -11,8 +11,8 @@ dependencies:
 
 devDependencies:
   svag-lint:
-    specifier: ^0.0.17
-    version: 0.0.17(prettier@3.2.5)
+    specifier: ^0.0.18
+    version: 0.0.18(prettier@3.2.5)
 
 packages:
 
@@ -964,8 +964,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /svag-lint@0.0.17(prettier@3.2.5):
-    resolution: {integrity: sha512-Mqj1+4dQNfQ+kOBE3Tk8MdYxbhcqejGXnpXHHmy4rlBtXmH3XrrH3pDQ570Ix40r43cE3yLD7J4zqcUYB12Tbg==}
+  /svag-lint@0.0.18(prettier@3.2.5):
+    resolution: {integrity: sha512-vOowGYXUPVIr0ZeHckzDuyXQjchld7QCKn4F4wAe/sprFNCLvx3Ka/DVQCuK0BhxBQgb8BlX1omJ7F/fKsL0hA==}
     dependencies:
       '@eslint/js': 9.0.0
       eslint: 9.0.0

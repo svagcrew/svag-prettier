@@ -27,6 +27,6 @@
     "prettier": "^3.2.5"
   },
   "devDependencies": {
-    "svag-lint": "^0.0.17"
+    "svag-lint": "^0.0.18"
   }
 }
