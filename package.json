@@ -18,15 +18,31 @@
     "access": "public"
   },
   "files": [
-    "configs/**/*"
+    "./configs/**/*",
+    "./dist/**/*"
   ],
+  "bin": {
+    "svag-prettier": "./dist/index.js"
+  },
   "scripts": {
-    "lint": "svag-lint lint"
+    "lint": "svag-lint lint",
+    "prettify": "svag-prettier prettify",
+    "types": "tsc --noEmit",
+    "build": "rimraf ./dist && tsc --build",
+    "watch": "tsc --watch --preserveWatchOutput --pretty"
   },
   "dependencies": {
-    "prettier": "^3.2.5"
+    "dedent": "^1.5.3",
+    "lodash": "^4.17.21",
+    "prettier": "^3.2.5",
+    "svag-cli-utils": "^0.1.8",
+    "typescript": "^5.4.5",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "svag-lint": "^0.1.10"
+    "@types/lodash": "^4.17.0",
+    "@types/node": "^20.12.7",
+    "svag-lint": "^0.1.12",
+    "svag-ts": "^0.1.10"
   }
 }
