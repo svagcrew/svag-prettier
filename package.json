@@ -35,14 +35,14 @@
     "dedent": "^1.5.3",
     "lodash": "^4.17.21",
     "prettier": "^3.2.5",
-    "svag-cli-utils": "^0.1.8",
+    "svag-cli-utils": "^0.1.9",
     "typescript": "^5.4.5",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.0",
     "@types/node": "^20.12.7",
-    "svag-lint": "^0.1.12",
-    "svag-ts": "^0.1.10"
+    "svag-lint": "^0.1.13",
+    "svag-ts": "^0.1.11"
   }
 }

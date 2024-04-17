@@ -54,12 +54,12 @@ defineCliApp(async ({ cwd, command, flags, argr }) => {
 
     const ignoreContent = await fs.readFile(path.resolve(__dirname, `../ignores/${ignoreName}.prettierignore`), 'utf-8')
     await fs.writeFile(ignorePath, ignoreContent + '\n')
-    log.toMemory.green(`${ignorePath}: prettier config file created`)
+    log.toMemory.green(`${ignorePath}: prettier ignore file created`)
   }
 
   const installDeps = async () => {
     log.green('Installing dependencies...')
-    await spawn({ cwd: packageJsonDir, command: 'pnpm i -D svag-prettier@latest' })
+    await spawn({ cwd: packageJsonDir, command: 'pnpm i -D svag-prettier@latest prettier' })
     log.toMemory.green(`${packageJsonPath}: dependencies installed`)
   }
 
@@ -105,7 +105,7 @@ defineCliApp(async ({ cwd, command, flags, argr }) => {
     case 'prettify': {
       await spawn({
         cwd: packageJsonDir,
-        command: `prettier --log-level warn --cache --write "./{src/**/*,*}.{ts,tsx,js,json,yml,scss}" "!./**/{node_modules,dist}/**/*" ${argr.join(' ')}`,
+        command: `pnpm prettier --log-level warn --cache --write "./**/*.{ts,tsx,js,json,yml,scss}" ${argr.join(' ')}`,
       })
       break
     }
