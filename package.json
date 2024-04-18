@@ -28,15 +28,16 @@
   "scripts": {
     "lint": "svag-lint lint",
     "prettify": "svag-prettier prettify",
-    "types": "tsc --noEmit",
-    "build": "rimraf ./dist && tsc --build",
-    "watch": "tsc --watch --preserveWatchOutput --pretty"
+    "types": "svag-ts types",
+    "build": "svag-ts build",
+    "watch": "svag-ts watch",
+    "prepare": "ts-patch install -s"
   },
   "dependencies": {
     "dedent": "^1.5.3",
     "lodash": "^4.17.21",
     "prettier": "^3.2.5",
-    "svag-cli-utils": "^0.1.13",
+    "svag-cli-utils": "^0.1.14",
     "typescript": "^5.4.5",
     "zod": "^3.22.4"
   },
@@ -44,7 +45,7 @@
     "@types/lodash": "^4.17.0",
     "@types/node": "^20.12.7",
     "rimraf": "^5.0.5",
-    "svag-lint": "^0.1.17",
-    "svag-ts": "^0.1.14"
+    "svag-lint": "^0.1.19",
+    "svag-ts": "^0.1.15"
   }
 }
