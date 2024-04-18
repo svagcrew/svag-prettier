@@ -38,7 +38,7 @@
     "dedent": "^1.5.3",
     "lodash": "^4.17.21",
     "prettier": "^3.2.5",
-    "svag-cli-utils": "^0.1.18",
+    "svag-cli-utils": "^0.1.19",
     "typescript": "^5.4.5",
     "zod": "^3.22.4"
   },
@@ -46,8 +46,8 @@
     "@types/lodash": "^4.17.0",
     "@types/node": "^20.12.7",
     "rimraf": "^5.0.5",
-    "svag-lint": "^0.1.23",
-    "svag-ts": "^0.1.19",
+    "svag-lint": "^0.1.24",
+    "svag-ts": "^0.1.20",
     "ts-patch": "^3.1.2"
   }
 }

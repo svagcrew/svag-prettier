@@ -98,6 +98,7 @@ defineCliApp(async ({ cwd, command, flags, argr }) => {
       await spawn({
         cwd: packageJsonDir,
         command: `pnpm prettier --log-level warn --cache --write "./**/*.{ts,tsx,js,json,yml,scss}" ${argr.join(' ')}`,
+        exitOnFailure: true,
       })
       break
     }
