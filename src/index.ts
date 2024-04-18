@@ -6,7 +6,7 @@ import {
   getPackageJson,
   isFileExists,
   log,
-  setPackageJsonData,
+  setPackageJsonDataItem,
   spawn,
   validateOrThrow,
 } from 'svag-cli-utils'
@@ -63,11 +63,7 @@ defineCliApp(async ({ cwd, command, flags, argr }) => {
     log.green('Adding "prettify" script to package.json...')
     const { packageJsonData, packageJsonPath } = await getPackageJson({ cwd: packageJsonDir })
     if (!packageJsonData.scripts?.prettify) {
-      if (!packageJsonData.scripts) {
-        packageJsonData.scripts = {}
-      }
-      packageJsonData.scripts.prettify = 'svag-prettier prettify'
-      await setPackageJsonData({ cwd: packageJsonDir, packageJsonData })
+      await setPackageJsonDataItem({ cwd: packageJsonDir, key: 'scripts.prettify', value: 'svag-prettier prettify' })
       log.toMemory.black(`${packageJsonPath}: script "prettify" added`)
     } else {
       log.toMemory.black(`${packageJsonPath}: script "prettify" already exists`)
