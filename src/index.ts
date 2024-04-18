@@ -40,21 +40,17 @@ defineCliApp(async ({ cwd, command, flags, argr }) => {
 
   const createIgnoreFile = async () => {
     log.green('Creating prettier ignore file...')
-    const ignorePath = path.resolve(packageJsonDir, '.prettierignore')
-    const { fileExists: ignoreExists } = await isFileExists({ filePath: ignorePath })
-    if (ignoreExists) {
-      log.toMemory.green(`${ignorePath}: prettier ignore file already exists`)
+    const projectIgnorePath = path.resolve(packageJsonDir, '.prettierignore')
+    const { fileExists: projectIgnoreExists } = await isFileExists({ filePath: projectIgnorePath })
+    if (projectIgnoreExists) {
+      log.toMemory.green(`${projectIgnorePath}: prettier ignore file already exists`)
       return
     }
-    const ignoreName = validateOrThrow({
-      zod: z.enum(['base']),
-      text: 'Invalid ignore file name',
-      data: flags.config || flags.c || 'base',
-    })
 
-    const ignoreContent = await fs.readFile(path.resolve(__dirname, `../ignores/${ignoreName}.prettierignore`), 'utf-8')
-    await fs.writeFile(ignorePath, ignoreContent + '\n')
-    log.toMemory.green(`${ignorePath}: prettier ignore file created`)
+    const srcIgnorePath = path.resolve(__dirname, '../.prettierignore')
+    const ignoreContent = await fs.readFile(srcIgnorePath, 'utf-8')
+    await fs.writeFile(projectIgnorePath, ignoreContent)
+    log.toMemory.green(`${projectIgnorePath}: prettier ignore file created`)
   }
 
   const installDeps = async () => {
