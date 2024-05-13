@@ -39,7 +39,7 @@
     "dedent": "^1.5.3",
     "lodash": "^4.17.21",
     "prettier": "^3.2.5",
-    "svag-cli-utils": "^0.1.37",
+    "svag-cli-utils": "^0.1.38",
     "typescript": "^5.4.5",
     "zod": "^3.22.4"
   },
@@ -48,9 +48,9 @@
     "@types/node": "^20.12.7",
     "husky": "^9.0.11",
     "rimraf": "^5.0.5",
-    "svag-husky": "^0.1.20",
-    "svag-lint": "^0.1.43",
-    "svag-ts": "^0.1.39",
+    "svag-husky": "^0.1.21",
+    "svag-lint": "^0.1.44",
+    "svag-ts": "^0.1.40",
     "ts-patch": "^3.1.2"
   }
 }
