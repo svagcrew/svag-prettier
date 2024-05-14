@@ -10,13 +10,14 @@ import {
   spawn,
   validateOrThrow,
 } from 'svag-cli-utils'
+import { fileURLToPath } from 'url'
 import z from 'zod'
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 defineCliApp(async ({ cwd, command, args, argr, flags }) => {
-  cwd = path.resolve(cwd, args[0] || '.')
-  const { packageJsonDir, packageJsonPath } = await getPackageJson({ cwd })
-
   const createConfigFile = async () => {
+    cwd = path.resolve(cwd, args[0] || '.')
+    const { packageJsonDir } = await getPackageJson({ cwd })
     log.green('Creating prettier config file...')
     const configPath = path.resolve(packageJsonDir, '.prettierrc.js')
     const { fileExists: configExists } = await isFileExists({ filePath: configPath })
@@ -40,6 +41,8 @@ defineCliApp(async ({ cwd, command, args, argr, flags }) => {
   }
 
   const createIgnoreFile = async () => {
+    cwd = path.resolve(cwd, args[0] || '.')
+    const { packageJsonDir } = await getPackageJson({ cwd })
     log.green('Creating prettier ignore file...')
     const projectIgnorePath = path.resolve(packageJsonDir, '.prettierignore')
     const { fileExists: projectIgnoreExists } = await isFileExists({ filePath: projectIgnorePath })
@@ -55,14 +58,17 @@ defineCliApp(async ({ cwd, command, args, argr, flags }) => {
   }
 
   const installDeps = async () => {
+    cwd = path.resolve(cwd, args[0] || '.')
+    const { packageJsonDir, packageJsonPath } = await getPackageJson({ cwd })
     log.green('Installing dependencies...')
     await spawn({ cwd: packageJsonDir, command: 'pnpm i -D svag-prettier@latest prettier' })
     log.toMemory.black(`${packageJsonPath}: dependencies installed`)
   }
 
   const addScriptToPackageJson = async () => {
+    cwd = path.resolve(cwd, args[0] || '.')
+    const { packageJsonDir, packageJsonData, packageJsonPath } = await getPackageJson({ cwd })
     log.green('Adding "prettify" script to package.json...')
-    const { packageJsonData, packageJsonPath } = await getPackageJson({ cwd: packageJsonDir })
     if (!packageJsonData.scripts?.prettify) {
       await setPackageJsonDataItem({ cwd: packageJsonDir, key: 'scripts.prettify', value: 'svag-prettier prettify' })
       log.toMemory.black(`${packageJsonPath}: script "prettify" added`)
@@ -96,6 +102,7 @@ defineCliApp(async ({ cwd, command, args, argr, flags }) => {
       break
     }
     case 'prettify': {
+      const { packageJsonDir } = await getPackageJson({ cwd })
       await spawn({
         cwd: packageJsonDir,
         command: `pnpm prettier --log-level warn --cache --write "./**/*.{ts,tsx,js,json,yml,scss}" ${argr.join(' ')}`,
@@ -114,6 +121,7 @@ defineCliApp(async ({ cwd, command, args, argr, flags }) => {
       break
     }
     case 'ping': {
+      const { packageJsonDir } = await getPackageJson({ cwd })
       await spawn({ cwd: packageJsonDir, command: 'echo pong' })
       break
     }

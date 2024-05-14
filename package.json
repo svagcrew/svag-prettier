@@ -17,6 +17,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "type": "module",
   "files": [
     "./bin/**/*",
     "./configs/**/*",
@@ -33,24 +34,26 @@
     "build": "svag-ts build",
     "watch": "svag-ts watch",
     "test": "echo 'Everything is OK'",
-    "prepare": "ts-patch install -s && husky"
+    "prepare": "husky"
   },
   "dependencies": {
     "dedent": "^1.5.3",
     "lodash": "^4.17.21",
     "prettier": "^3.2.5",
-    "svag-cli-utils": "^0.1.38",
+    "svag-cli-utils": "^0.1.39",
     "typescript": "^5.4.5",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.0",
     "@types/node": "^20.12.7",
+    "concurrently": "^8.2.2",
     "husky": "^9.0.11",
+    "onchange": "^7.1.0",
     "rimraf": "^5.0.5",
-    "svag-husky": "^0.1.21",
+    "svag-husky": "^0.1.22",
     "svag-lint": "^0.1.44",
-    "svag-ts": "^0.1.40",
-    "ts-patch": "^3.1.2"
+    "svag-ts": "^0.1.41",
+    "tsc-alias": "^1.8.10"
   }
 }
