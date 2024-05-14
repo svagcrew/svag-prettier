@@ -1,5 +1,6 @@
 import dedent from 'dedent'
 import { promises as fs } from 'fs'
+import _ from 'lodash'
 import path from 'path'
 import {
   defineCliApp,
@@ -31,9 +32,10 @@ defineCliApp(async ({ cwd, command, args, argr, flags }) => {
       data: flags.config || flags.c || 'base',
     })
 
-    const configContent = dedent`/** @type {import("prettier").Config} */
-    module.exports = {
-      ...require('svag-prettier/configs/${configName}'),
+    const configContent = dedent`import svagPrettierConfig${_.capitalize(configName)} from 'svag-prettier/configs/${configName}.js'
+    /** @type {import("prettier").Config} */
+    export default {
+      ...svagPrettierConfig${_.capitalize(configName)},
     }
     `
     await fs.writeFile(configPath, configContent + '\n')
