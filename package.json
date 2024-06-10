@@ -1,6 +1,6 @@
 {
   "name": "svag-prettier",
-  "version": "0.1.63",
+  "version": "0.1.64",
   "homepage": "https://github.com/svagcrew/svag-prettier",
   "repository": {
     "type": "git",
@@ -17,7 +17,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "type": "module",
+  "bin": {
+    "svag-prettier": "./bin/index.js"
+  },
   "files": [
     "./src/**/*",
     "./dist/**/*",
@@ -25,17 +27,14 @@
     "./configs/**/*",
     "./.prettierignore"
   ],
-  "bin": {
-    "svag-prettier": "./bin/index.js"
-  },
   "scripts": {
-    "lint": "svag-lint lint",
-    "prettify": "svag-prettier prettify",
-    "types": "svag-ts types",
     "build": "svag-ts build",
-    "watch": "svag-ts watch",
+    "lint": "svag-lint lint",
+    "prepare": "husky",
+    "prettify": "svag-prettier prettify",
     "test": "echo 'Everything is OK'",
-    "prepare": "husky"
+    "types": "svag-ts types",
+    "watch": "svag-ts watch"
   },
   "dependencies": {
     "dedent": "^1.5.3",
@@ -56,5 +55,6 @@
     "svag-lint": "^0.1.73",
     "svag-ts": "^0.1.69",
     "tsc-alias": "^1.8.10"
-  }
+  },
+  "type": "module"
 }
